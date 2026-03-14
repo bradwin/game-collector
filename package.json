@@ -12,12 +12,16 @@
     "typecheck": "npm run typecheck --workspaces",
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev",
-    "prisma:deploy": "prisma migrate deploy"
+    "prisma:deploy": "prisma migrate deploy",
+    "prisma:seed": "node prisma/seed.mjs"
   },
   "devDependencies": {
     "concurrently": "^9.0.1",
     "prisma": "^5.20.0",
     "typescript": "^5.6.2",
     "@types/node": "^22.7.4"
+  },
+  "prisma": {
+    "seed": "node prisma/seed.mjs"
   }
 }

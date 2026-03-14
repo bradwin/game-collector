@@ -7,6 +7,7 @@ import { registerAuthRoutes } from "./auth/routes.js";
 import { registerGameRoutes } from "./games/routes.js";
 import { registerOwnershipRoutes } from "./ownership/routes.js";
 import { registerPurchaseRoutes } from "./purchases/routes.js";
+import { registerPlatformRoutes } from "./platforms/routes.js";
 
 export const buildApp = () => {
   const app = Fastify({ logger: true });
@@ -24,6 +25,7 @@ export const buildApp = () => {
 
   app.register(registerHealthRoutes, { prefix: "/health" });
   app.register(registerAuthRoutes, { prefix: "/auth" });
+  app.register(registerPlatformRoutes, { prefix: "/platforms" });
   app.register(registerGameRoutes, { prefix: "/games" });
   app.register(registerOwnershipRoutes, { prefix: "/ownership" });
   app.register(registerPurchaseRoutes, { prefix: "/purchases" });
