@@ -6,7 +6,7 @@ import { OwnershipMedium, OwnershipStatus, PlayStatus } from "./constants.js";
 const normalizeString = (value?: string | null) => value ?? null;
 
 export const ownershipService = {
-  listByUser: (userId: string, filters: { platformId?: string; medium?: string; status?: string }) =>
+  listByUser: (userId: string, filters: { platformId?: string; medium?: string; status?: string; q?: string }) =>
     ownershipRepository.listByUser(userId, filters),
 
   async getByIdForUser(id: string, userId: string) {

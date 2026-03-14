@@ -1,11 +1,13 @@
-export interface GameMetadata {
-  providerGameId: string;
+export interface MetadataSearchResult {
+  provider: "RAWG";
+  externalId: string;
   title: string;
-  releaseDate?: string;
-  genres: string[];
+  releaseDate: string | null;
+  coverImageUrl: string | null;
+  sourceUrl: string | null;
 }
 
 export interface MetadataProvider {
-  searchGames(query: string): Promise<GameMetadata[]>;
-  getGameById(providerGameId: string): Promise<GameMetadata | null>;
+  isConfigured(): boolean;
+  searchGames(query: string): Promise<MetadataSearchResult[]>;
 }
