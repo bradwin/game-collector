@@ -4,7 +4,8 @@ import { OWNERSHIP_MEDIUM, OWNERSHIP_STATUS, PLAY_STATUS } from "./constants.js"
 export const ownershipListQuerySchema = z.object({
   platformId: z.string().min(1).optional(),
   medium: z.enum(OWNERSHIP_MEDIUM).optional(),
-  status: z.enum(OWNERSHIP_STATUS).optional()
+  status: z.enum(OWNERSHIP_STATUS).optional(),
+  q: z.string().trim().min(1).optional()
 });
 
 export const ownershipBodySchema = z.object({
