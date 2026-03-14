@@ -1,0 +1,8 @@
+node_modules
+npm-debug.log*
+.env
+*.db
+*.db-journal
+apps/frontend/dist
+apps/backend/dist
+coverage
