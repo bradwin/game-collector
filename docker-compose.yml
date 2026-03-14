@@ -1,0 +1,13 @@
+services:
+  app:
+    build: .
+    container_name: game-collector
+    ports:
+      - "4000:4000"
+      - "5173:5173"
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: npm run dev
